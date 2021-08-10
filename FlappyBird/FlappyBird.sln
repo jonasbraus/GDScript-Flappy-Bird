@@ -1,0 +1,19 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlappyBird", "FlappyBird.csproj", "{AEDC3644-E31C-4017-8BAC-79F4900AFB3F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AEDC3644-E31C-4017-8BAC-79F4900AFB3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEDC3644-E31C-4017-8BAC-79F4900AFB3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEDC3644-E31C-4017-8BAC-79F4900AFB3F}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{AEDC3644-E31C-4017-8BAC-79F4900AFB3F}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{AEDC3644-E31C-4017-8BAC-79F4900AFB3F}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{AEDC3644-E31C-4017-8BAC-79F4900AFB3F}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal
