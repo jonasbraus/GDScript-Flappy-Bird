@@ -1,0 +1,59 @@
+[gd_scene load_steps=11 format=3 uid="uid://dmu4quupr8uw"]
+
+[ext_resource type="Texture2D" uid="uid://lrhqf26v7cui" path="res://flappy-bird-assets-master/sprites/background-day.png" id="1_2rg3y"]
+[ext_resource type="Script" path="res://scenes/bird.gd" id="1_525sc"]
+[ext_resource type="Texture2D" uid="uid://rb3nteqdu0rm" path="res://flappy-bird-assets-master/sprites/yellowbird-midflap.png" id="1_q8lyd"]
+[ext_resource type="Script" path="res://scenes/game.gd" id="1_wtf8n"]
+[ext_resource type="Texture2D" uid="uid://ulkac6obxjnd" path="res://flappy-bird-assets-master/sprites/yellowbird-downflap.png" id="4_p70ne"]
+[ext_resource type="Texture2D" uid="uid://bgemocmelj0om" path="res://flappy-bird-assets-master/sprites/yellowbird-upflap.png" id="5_kbkxr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yjeub"]
+radius = 13.0384
+
+[sub_resource type="Animation" id="Animation_rki1l"]
+resource_name = "idle"
+
+[sub_resource type="Animation" id="Animation_hib7n"]
+resource_name = "flap_wings"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_p70ne"), ExtResource("1_q8lyd"), ExtResource("5_kbkxr")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u138h"]
+_data = {
+"flap_wings": SubResource("Animation_hib7n"),
+"idle": SubResource("Animation_rki1l")
+}
+
+[node name="game" type="Node2D"]
+script = ExtResource("1_wtf8n")
+
+[node name="background" type="Sprite2D" parent="."]
+texture = ExtResource("1_2rg3y")
+
+[node name="bird" type="CharacterBody2D" parent="."]
+script = ExtResource("1_525sc")
+
+[node name="Sprite2D" type="Sprite2D" parent="bird"]
+texture = ExtResource("5_kbkxr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bird"]
+shape = SubResource("CircleShape2D_yjeub")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="bird"]
+libraries = {
+"": SubResource("AnimationLibrary_u138h")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
